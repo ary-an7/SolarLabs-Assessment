@@ -20,7 +20,8 @@
 <script>
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
-window.NUM_HORIZONTAL_LINES=50;
+var grid = new THREE.GridHelper(100,20);
+scene.add(grid);
 camera.position.set(0, 10, 20);
 var renderer = new THREE.WebGLRenderer({
   antialias: true
