@@ -4,17 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-  body {
-  overflow: hidden;
-  margin: 0;
-  }
-  </style>
   <title>SolarLabs Assignment</title>
 </head>
-<body>
+<body style="  overflow: hidden; margin: 0;">
+  <button id="btn"  title="delete" href="/index.html">Delete</button>
+
   <script src="https://threejs.org/build/three.min.js"></script>
 <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+
 <script>
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
@@ -27,23 +24,17 @@ var renderer = new THREE.WebGLRenderer({
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0xfffffff);
 document.body.appendChild(renderer.domElement);
-
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
-
 document.addEventListener("mousedown", onMouseDown, false);
-
 var light = new THREE.DirectionalLight(0xffffff, 2);
 light.position.set(5, 10, -10);
 scene.add(light);
-
 var objects = [];
-
 var planeGeom = new THREE.PlaneGeometry(100, 100);
 planeGeom.rotateX(-Math.PI / 2);
 var plane = new THREE.Mesh(planeGeom, new THREE.MeshStandardMaterial());
 scene.add(plane);
 objects.push(plane);
-
 var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2();
 var intersects;
