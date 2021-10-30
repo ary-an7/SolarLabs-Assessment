@@ -17,7 +17,7 @@
 <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
 <script>
 var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+var camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
 var grid = new THREE.GridHelper(100,20);
 scene.add(grid);
 camera.position.set(0, 70, 20);
@@ -59,7 +59,7 @@ function onMouseDown(event) {
   if (intersects.length > 0) {
     if (clickCount <= 3) {
       controlPoints[clickCount] = intersects[0].point.clone();
-      var cp = new THREE.Mesh(new THREE.SphereGeometry(0.125, 16, 12), new THREE.MeshBasicMaterial({color: "green"}));
+      var cp = new THREE.Mesh(new THREE.SphereGeometry(0.5, 16, 12), new THREE.MeshBasicMaterial({color: "green"}));
       cp.position.copy(intersects[0].point);
       scene.add(cp);
       clickCount++;
